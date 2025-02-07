@@ -76,12 +76,13 @@ subMenuEl.classList.add("flex-around");
 subMenuEl.style.position = ("absolute");
 subMenuEl.style.top ="0";
 
+// Select and cache the all of the <a> elements inside of topMenuEl in a variable named topMenuLinks.
 const topMenuLinks = topMenuEl.querySelectorAll("a");
 topMenuEl.addEventListener("click", function(event) {
   event.preventDefault();
 
   clickedLink = event.target;
-  if (clickedLink.tagName !== "A") return;
+  if (clickedLink.tagName !== "a") return;
   console.log(clickedLink.textContent());
   
   if (clickedLink.classList.contains("active")) {
@@ -94,3 +95,8 @@ topMenuEl.addEventListener("click", function(event) {
   }
 
 });
+
+console.log(topMenuEl);
+
+topMenuLinks.forEach(link => link.classList.remove("active"));
+  e.target.classList.add("active");
